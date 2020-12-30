@@ -5,18 +5,18 @@ export default function App() {
   var [chng, setChng] = useState("");
   function clicky(event) {
     chng = event.target.value;
-    var n = chng.includes(" ");
-    if (n == true) {
-      setChng("true");
-    } else {
-      setChng(chng);
+    for(var i = 0;i < chng.length;i++){
+      if(chng[i]=== " "){
+        setChng("BLANK SPACE");
+      }
+      else{
+        setChng(chng);
+      }
     }
   }
-
   return (
     <div className="App">
       <input onChange={clicky} />
-      <h1>{chng}</h1>
+      <h2>{chng}</h2>
     </div>
-  );
-}
+  );}
